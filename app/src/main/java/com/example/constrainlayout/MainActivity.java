@@ -2,6 +2,7 @@ package com.example.constrainlayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
                 //menyimpan input user di edittext password kedalam variabel password
                 Password = edPassword.getText().toString();
 
+                //mensetting email yang benar
                 String email = "wachidmm@gmail.com";
+
+                //mensetting password yang benar
                 String pass = "wachid110";
 
                 //membuat variabel toast dan membuat toast dengan menambahkan variabel nama dan password
@@ -56,6 +60,24 @@ public class MainActivity extends AppCompatActivity {
                     t = Toast.makeText(getApplicationContext(),
                             "Login Sukses", Toast.LENGTH_LONG);
                     t.show();
+
+                    //membuat  objek bundel
+                    Bundle b = new Bundle();
+
+                    //memasukkan value dari variabel email dengan kunci "a" kedalam bundel
+                    b.putString("a",Email);
+
+                    //memasukkan value dari variabel password dengan kunci "b" kedalam bundel
+                    b.putString("b",Password);
+
+                    //membuat objek intent berpindah activity dari mainactivity ke activity2
+                    Intent i = new Intent(getApplicationContext(), MainActivity2.class);
+
+                    //memasukkan bundel kedalam intent untuk dikirim ke Activity2
+                    i.putExtras(b);
+
+                    //berpindah ke activity2
+                    startActivity(i);
                 }
                 else if(!Email.equals(email) && Password.equals(pass))
                 {

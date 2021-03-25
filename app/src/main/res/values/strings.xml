@@ -5,4 +5,10 @@
     <string name="Login">L O G I N</string>
     <string name="tPassword">Password</string>
     <string name="bSignin">Sign-In</string>
+    <string name="tData">Data Anda</string>
+    <string name="tEml">Email :</string>
+    <string name="tPswd">Password: </string>
+    <string name="txEmail">Ini hasil Email</string>
+    <string name="txPwd">Ini hasil Password</string>
+    <string name="label2">Login Berhasil</string>
 </resources>
