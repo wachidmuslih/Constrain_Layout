@@ -24,22 +24,24 @@ public class MainActivity extends AppCompatActivity {
     String Email, Password;
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //Membuat kondisi jika yang dipilih adalah id mnDaftar
+        if (item.getItemId() == R.id.mnDaftar)
+        {
+            //Method untuk memanggil activity
+            Intent i = new Intent(getApplicationContext(), Home_Activity.class);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //Method untuk menampilkan menu.
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-    @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-        //Membuat kondisi jika yang dipilih adalah id mnDaftar
-        if (item.getItemId() == R.id.mnDaftar)
-        {
-            //Method untuk memanggil activity "DaftarActivity"
-            Intent i = new Intent(getApplicationContext(), DaftarActivity.class);
-            startActivity(i);
-        }
-        return super.onContextItemSelected(item);
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
